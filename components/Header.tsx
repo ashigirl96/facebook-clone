@@ -6,8 +6,6 @@ type Props = {};
 export const Header: React.FC<Props> = () => {
   return (
     <div>
-      <h1 className="text-6xl">Header</h1>
-
       {/*  Left */}
       <div className="flex">
         <Image
@@ -16,12 +14,16 @@ export const Header: React.FC<Props> = () => {
           height={40}
           layout={"fixed"}
         />
+        <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
+          <SearchIcon className="h-6 text-gray-600" />
+          <input
+            className="flex ml-2 items-center bg-transparent outline-none placeholder-grey-500"
+            type={"text"}
+            placeholder={"Search Facebook"}
+          />
+        </div>
       </div>
       {/*  Center */}
-      <div className="flex ml-2 items-center rounded-full">
-        <input type={"text"} placeholder={"Search Facebook"} />
-        <SearchIcon className="h-6 text-gray-600" />
-      </div>
 
       {/*  Right */}
     </div>
