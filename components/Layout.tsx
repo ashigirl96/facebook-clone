@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
+import { Header } from "./Header";
 
 type Props = {
   children?: ReactNode
@@ -12,11 +13,15 @@ const Layout = ({ children, title = 'Facebook' }: Props) => (
       <title>{title}</title>
       <meta charSet="utf-8" />
     </Head>
+    {/* Header */}
+    <Header />
+
+    <main>
+    {/* Sidebar */}
+    {/* Feed */}
+    {/* Widgets */}
+    </main>
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
   </div>
 )
 
