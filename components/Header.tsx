@@ -9,6 +9,12 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/outline";
 import { HeaderIcon } from "./HeaderIcon";
+import {
+  ViewGridIcon,
+  BellIcon,
+  ChatIcon,
+  ChevronDoubleDownIcon,
+} from "@heroicons/react/solid";
 
 type Props = {};
 export const Header: React.FC<Props> = () => {
@@ -25,14 +31,14 @@ export const Header: React.FC<Props> = () => {
         <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
           <SearchIcon className="h-6 text-gray-600" />
           <input
-            className="flex ml-2 items-center bg-transparent outline-none placeholder-grey-500"
+            className="hidden md:inline-flex ml-2 items-center bg-transparent outline-none placeholder-grey-500 flex-shrink"
             type={"text"}
             placeholder={"Search Facebook"}
           />
         </div>
       </div>
       {/*  Center */}
-      <div className="flex justify-center flex-grow flex-shrink">
+      <div className="flex justify-center flex-grow">
         {/* @media @-規則は、コードの最上位に配置したり、
         他の条件付きグループ @-規則の中に入れ子にして配置したりすることができます。 */}
         {/* @media (min-width: 768px )	*/}
@@ -46,7 +52,17 @@ export const Header: React.FC<Props> = () => {
       </div>
 
       {/*  Right */}
-      <div>Right</div>
+      <div className="flex items-center sm:space-x-3 justify-end">
+        {/*<div className="flex">*/}
+        {/* Profile pic */}
+        <p className="whitespace-nowrap font-semibold pr-3 flex-shrink">
+          Reon Nishimura
+        </p>
+        <ViewGridIcon className="icon" />
+        <ChatIcon className="icon" />
+        <BellIcon className="icon" />
+        <ChevronDoubleDownIcon className="icon" />
+      </div>
     </div>
   );
 };
