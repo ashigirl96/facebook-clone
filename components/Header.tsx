@@ -1,11 +1,19 @@
 import React from "react";
 import Image from "next/image";
-import { SearchIcon } from "@heroicons/react/outline";
+import {
+  FlagIcon,
+  HomeIcon,
+  PlayIcon,
+  SearchIcon,
+  ShoppingCartIcon,
+  UserGroupIcon,
+} from "@heroicons/react/outline";
+import { HeaderIcon } from "./HeaderIcon";
 
 type Props = {};
 export const Header: React.FC<Props> = () => {
   return (
-    <div>
+    <div className="flex items-center shadow-md bg-white sticky top-0 z-50 p-2 lg:px-5">
       {/*  Left */}
       <div className="flex">
         <Image
@@ -24,8 +32,21 @@ export const Header: React.FC<Props> = () => {
         </div>
       </div>
       {/*  Center */}
+      <div className="flex justify-center flex-grow flex-shrink">
+        {/* @media @-規則は、コードの最上位に配置したり、
+        他の条件付きグループ @-規則の中に入れ子にして配置したりすることができます。 */}
+        {/* @media (min-width: 768px )	*/}
+        <div className="flex space-x-6 md:space-x-2">
+          <HeaderIcon active Icon={HomeIcon} />
+          <HeaderIcon Icon={FlagIcon} />
+          <HeaderIcon Icon={PlayIcon} />
+          <HeaderIcon Icon={ShoppingCartIcon} />
+          <HeaderIcon Icon={UserGroupIcon} />
+        </div>
+      </div>
 
       {/*  Right */}
+      <div>Right</div>
     </div>
   );
 };
