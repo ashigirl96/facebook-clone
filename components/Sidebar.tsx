@@ -14,14 +14,13 @@ import React from "react";
 type Props = {};
 export const Sidebar: React.FC<Props> = ({}) => {
   const [session, isLoading] = useSession();
-  console.log(`isLoading: ${isLoading}`);
   if (isLoading) {
     return <div>Loading...</div>;
   }
   return (
     // 要素の最大幅を設定します。これは width プロパティの使用値が、 max-width で指定した値を上回ることを防ぎます
     // 画面が786px以上のときは、最低限300px
-    <div className="p-2 hidden sm:flex sm:flex-col sm:max-w-[400px]">
+    <div className="p-2 flex flex-col max-w-[400px] flex-grow">
       <SidebarRow
         src={session?.user?.image}
         title={session?.user?.name || ""}
