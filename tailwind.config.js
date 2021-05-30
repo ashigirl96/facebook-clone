@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
+    colors: {
+      neco: "#F1B286",
+    },
   },
   variants: {
     extend: {},

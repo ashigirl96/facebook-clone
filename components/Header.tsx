@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import {
   FlagIcon,
@@ -15,9 +15,12 @@ import {
   ChatIcon,
   ChevronDoubleDownIcon,
 } from "@heroicons/react/solid";
+import { SessionContext } from "../pages";
 
 type Props = {};
 export const Header: React.FC<Props> = () => {
+  const { session } = useContext(SessionContext);
+
   return (
     <div className="flex items-center shadow-md bg-white sticky top-0 z-50 p-2 lg:px-5">
       {/*  Left */}
@@ -42,7 +45,7 @@ export const Header: React.FC<Props> = () => {
         {/* @media @-規則は、コードの最上位に配置したり、
         他の条件付きグループ @-規則の中に入れ子にして配置したりすることができます。 */}
         {/* @media (min-width: 768px )	*/}
-        <div className="flex space-x-6 md:space-x-2">
+        <div className="flex space-x-1 md:space-x-2">
           <HeaderIcon active Icon={HomeIcon} />
           <HeaderIcon Icon={FlagIcon} />
           <HeaderIcon Icon={PlayIcon} />
@@ -56,7 +59,7 @@ export const Header: React.FC<Props> = () => {
         {/*<div className="flex">*/}
         {/* Profile pic */}
         <p className="whitespace-nowrap font-semibold pr-3 flex-shrink">
-          Reon Nishimura
+          {session?.user?.name}
         </p>
         <ViewGridIcon className="icon" />
         <ChatIcon className="icon" />

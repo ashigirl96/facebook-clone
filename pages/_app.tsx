@@ -1,10 +1,12 @@
-import Layout from "../components/Layout";
 import "../styles/globals.css";
+import { Provider } from "next-auth/client";
+import React from "react";
+import { AppProps } from "next/app";
 
-const IndexPage = () => (
-  <Layout title="Facebook">
-    <div />
-  </Layout>
+const App: React.FC<AppProps> = ({ Component, pageProps }) => (
+  <Provider session={pageProps.session}>
+    <Component {...pageProps} />
+  </Provider>
 );
 
-export default IndexPage;
+export default App;
