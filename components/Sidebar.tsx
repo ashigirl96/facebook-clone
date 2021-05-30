@@ -21,7 +21,7 @@ export const Sidebar: React.FC<Props> = ({}) => {
   return (
     // 要素の最大幅を設定します。これは width プロパティの使用値が、 max-width で指定した値を上回ることを防ぎます
     // 画面が786px以上のときは、最低限300px
-    <div className="p-2 mt-5 max-w-[600px] sm:max-w-1">
+    <div className="p-2 hidden sm:flex sm:flex-col sm:max-w-[400px]">
       <SidebarRow
         src={session?.user?.image}
         title={session?.user?.name || ""}

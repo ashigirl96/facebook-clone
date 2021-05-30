@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import Head from "next/head";
 import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
+import { Feed } from "./Feed";
 
 type Props = {
   children?: ReactNode;
@@ -17,10 +18,11 @@ const Layout = ({ children, title = "Facebook" }: Props) => (
     {/* Header */}
     <Header />
 
-    <main>
+    <main className="flex mt-5">
       {/* Sidebar */}
       <Sidebar />
       {/* Feed */}
+      <Feed />
       {/* Widgets */}
     </main>
     {children}
