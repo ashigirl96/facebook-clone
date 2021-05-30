@@ -1,13 +1,14 @@
-import React, { ReactNode } from 'react'
-import Head from 'next/head'
+import React, { ReactNode } from "react";
+import Head from "next/head";
 import { Header } from "./Header";
+import { Sidebar } from "./Sidebar";
 
 type Props = {
-  children?: ReactNode
-  title?: string
-}
+  children?: ReactNode;
+  title?: string;
+};
 
-const Layout = ({ children, title = 'Facebook' }: Props) => (
+const Layout = ({ children, title = "Facebook" }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -17,12 +18,13 @@ const Layout = ({ children, title = 'Facebook' }: Props) => (
     <Header />
 
     <main>
-    {/* Sidebar */}
-    {/* Feed */}
-    {/* Widgets */}
+      {/* Sidebar */}
+      <Sidebar />
+      {/* Feed */}
+      {/* Widgets */}
     </main>
     {children}
   </div>
-)
+);
 
-export default Layout
+export default Layout;

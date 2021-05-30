@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Image from "next/image";
 import {
   FlagIcon,
@@ -10,16 +10,16 @@ import {
 } from "@heroicons/react/outline";
 import { HeaderIcon } from "./HeaderIcon";
 import {
-  ViewGridIcon,
   BellIcon,
   ChatIcon,
   ChevronDoubleDownIcon,
+  ViewGridIcon,
 } from "@heroicons/react/solid";
-import { SessionContext } from "../pages";
+import { useSession } from "next-auth/client";
 
 type Props = {};
 export const Header: React.FC<Props> = () => {
-  const { session } = useContext(SessionContext);
+  const [session] = useSession();
 
   return (
     <div className="flex items-center shadow-md bg-white sticky top-0 z-50 p-2 lg:px-5">
@@ -41,9 +41,10 @@ export const Header: React.FC<Props> = () => {
         </div>
       </div>
       {/*  Center */}
+      {/* flex-grow アイテムサイズ（伸び率、大きさ）を指定する */}
       <div className="flex justify-center flex-grow">
         {/* @media @-規則は、コードの最上位に配置したり、
-        他の条件付きグループ @-規則の中に入れ子にして配置したりすることができます。 */}
+         他の条件付きグループ @-規則の中に入れ子にして配置したりすることができます。 */}
         {/* @media (min-width: 768px )	*/}
         <div className="flex space-x-1 md:space-x-2">
           <HeaderIcon active Icon={HomeIcon} />
@@ -58,6 +59,7 @@ export const Header: React.FC<Props> = () => {
       <div className="flex items-center sm:space-x-3 justify-end">
         {/*<div className="flex">*/}
         {/* Profile pic */}
+        {/* アイテムサイズの縮み率 flex-shrink-1 より -2の方が2倍小さくなる*/}
         <p className="whitespace-nowrap font-semibold pr-3 flex-shrink">
           {session?.user?.name}
         </p>

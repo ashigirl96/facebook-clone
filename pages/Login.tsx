@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { signIn } from "next-auth/client";
 
-export function Login() {
+export default function Login() {
   return (
     <div className="h-screen flex flex-col justify-center bg-gray-50">
       <div className="mx-auto pb-3">
