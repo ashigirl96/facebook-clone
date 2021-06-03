@@ -18,7 +18,7 @@ const Layout = ({ children, title = "Facebook" }: Props) => (
     {/* Header */}
     <Header />
 
-    <main className="flex mt-5">
+    <main className="flex mt-5 bg-gray-100">
       {/* Sidebar */}
       <Sidebar />
       {/* Feed */}
