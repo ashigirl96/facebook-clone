@@ -91,17 +91,8 @@ export const InputBox: React.FC<Props> = ({}) => {
         {session?.user?.image && (
           <Image
             src={session.user.image}
-            height={40}
-            width={40}
-            layout="fixed"
-            className="rounded-full"
-          />
-        )}
-        {session?.user?.image && (
-          <Image
-            src={session.user.image}
-            height={40}
-            width={40}
+            height={48}
+            width={48}
             layout="fixed"
             className="rounded-full"
           />
@@ -109,7 +100,7 @@ export const InputBox: React.FC<Props> = ({}) => {
         {/*flex: 1 1 0%; ⇔ flex-grow: 1, flex-shrink: 1, flex-basis: 0%  */}
         <form className="flex flex-1">
           <input
-            className="rounded-full outline-none bg-gray-100 h-12 px-5 flex-grow"
+            className="rounded-full outline-none bg-gray-100 h-12 px-5 flex-grow placeholder-gray-500 text-xl"
             type={"text"}
             placeholder={`${session?.user?.name}さん、その気持ち、シェアしよう`}
             ref={inputElem}
