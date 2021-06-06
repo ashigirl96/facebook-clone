@@ -25,6 +25,7 @@ export const InputBox: React.FC<Props> = ({}) => {
         image: session?.user?.image,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       };
+      inputElem.current.value = "";
       await db
         .collection("posts")
         .add(data)

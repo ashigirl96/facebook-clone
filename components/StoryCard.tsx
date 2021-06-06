@@ -15,7 +15,7 @@ export const StoryCard: React.FC<Props> = ({ name, src, profile }) => {
     >
       <Image
         key={name}
-        className="absolute opacity-5 lg:opacity-100 rounded-full z-50 top-10"
+        className="absolute opacity-5 lg:opacity-100 rounded-full z-50"
         src={profile}
         height={50}
         width={50}
